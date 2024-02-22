@@ -1,0 +1,43 @@
+$primary-color: #1890ff; // 全局主色
+$heading-color: rgba(0, 0, 0, 0.85); // 标题色
+$text-color: rgba(0, 0, 0, 0.65); // 主文本色
+$text-color-secondary: rgba(0, 0, 0, 0.45); // 次文本色
+$disabled-color: rgba(0, 0, 0, 0.25); // 失效色
+$border-color-base: #d9d9d9; // 边框色
+$divider-color: rgba(0, 0, 0, 0.06); // 分割线
+$background-color: rgba(0, 0, 0, 0.04); // 背景色
+$table-head-color: rgba(0, 0, 0, 0.02); // 表格头背景色
+
+$header-height: 60px; // header高度
+$gutter: 24px; // 布局间距
+
+
+$border-radius-base: 4px; // 组件/浮层圆角
+$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // 浮层阴影
+$link-color: #1890ff; // 链接色
+$success-color: #52c41a; // 成功色
+$warning-color: #faad14; // 警告色
+$error-color: #f5222d; // 错误色
+
+$font-scale: 1;
+/****** 截图hack css *********************************/
+$font-scale: 1.6;
+
+// 字体大小  .font-14 .font-16 font-18 .font-24 .font-32
+@function font($num) {
+  @return $num*$font-scale+px;
+}
+$font-list: 12,14,16,18,20,24,28,30,32,34,36,64;
+$font-12: font(12);
+$font-14: font(14);
+$font-16: font(16);
+$font-18: font(18);
+$font-20: font(20);
+$font-24: font(24);
+$font-28: font(28);
+$font-30: font(30);
+$font-32: font(32);
+$font-34: font(34);
+$font-36: font(36);
+$font-64: font(64);
+$font-size-base: $font-14; // 主字号

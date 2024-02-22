@@ -1,0 +1,297 @@
+@import "variables.scss";
+
+body {
+  background-color: $background-color;
+  color: $heading-color;
+  line-height: 1.5;
+  font-size: $font-14;
+}
+
+.h-100 {
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+
+// 白色背景
+.white-bg {
+  background-color: #fff;
+}
+.invite-bg{
+  background: #E6F7FF!important;
+  border:1px solid #91D5FF!important
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+
+
+@each $value in $font-list{
+  .font-#{$value}{
+      font-size: #{$value*$font-scale+'px'};
+  }
+};
+
+// 加粗
+.weight-500{
+  font-weight:500
+}
+.weight-600{
+  font-weight:600
+}
+// 文本颜色
+.title-color{
+  color:$heading-color
+}
+
+// 间距 margin padding
+$gutter-list: 0,8,16,20,24,32,36,40,48,80,140;
+@each $value in $gutter-list{
+  .m-#{$value} { margin: #{$value+'px'}; }
+  .mx-#{$value} { margin-left: #{$value+'px'};margin-right: #{$value+'px'}; }
+  .my-#{$value} { margin-top: #{$value+'px'};margin-bottom: #{$value+'px'}; }
+  .mt-#{$value} { margin-top: #{$value+'px'}; }
+  .mb-#{$value} { margin-bottom: #{$value+'px'}; }
+  .ml-#{$value} { margin-left: #{$value+'px'}; }
+  .mr-#{$value} { margin-right: #{$value+'px'}; }
+
+  .p-#{$value} { padding: #{$value+'px'}; }
+  .px-#{$value} { padding-left: #{$value+'px'};padding-right: #{$value+'px'}; }
+  .py-#{$value} { padding-top: #{$value+'px'};padding-bottom: #{$value+'px'}; }
+  .pt-#{$value} { padding-top: #{$value+'px'}; }
+  .pb-#{$value} { padding-bottom: #{$value+'px'}; }
+  .pl-#{$value} { padding-left: #{$value+'px'}; }
+  .pr-#{$value} { padding-right: #{$value+'px'}; }
+};
+
+
+// 主题色
+.primary-color {
+  color: $primary-color!important;
+}
+//辅助文字颜色
+.secondary-color {
+  color: $text-color-secondary;
+}
+//成功色
+.success-color {
+  color: $success-color;
+}
+//警告色
+.warning-color {
+  color: $warning-color;
+}
+//错误色
+.error-color {
+  color: $error-color;
+}
+
+// 阴影边框
+.box-shadow {
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  padding: 24px;
+}
+
+// 主要大图标(带圆形背景色)
+.primary-icon {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #1890FF;
+  font-size: $font-32;
+  background-color: #E6F7FF;
+}
+
+
+
+// antd 样式覆盖
+// Modal 对话框
+.ant-modal-title,
+.ant-modal-footer {
+	text-align: center;
+}
+.ant-modal-footer {
+	border-top: none;
+}
+
+// antd tabs标签数字样式扩展
+.ant-tabs-nav .ant-tabs-tab .antd-tabs-number{
+  padding: 0 8px;
+  border-radius: 15px;
+  margin-left: 10px;
+  background: rgba(0,0,0, 0.1);
+}
+.ant-tabs-nav .ant-tabs-tab-active .antd-tabs-number{
+  background: rgb(24 144 255 / 20%);
+}
+
+
+// antd table扩展样式
+.ant-table-current:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+    background: #e6f7ff;
+}
+
+// modal, table字体颜色覆盖
+.ant-modal,
+.ant-table {
+  color: $heading-color;
+}
+
+// 垂直居中
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px; /* 纵向滚动条*/
+  height: 8px; /* 横向滚动条 */
+  background-color: #fff;
+}
+
+/*定义滚动条轨道 内阴影*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0);
+  background-color: #dcdcdc;
+}
+
+/*定义滑块 内阴影*/
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0);
+  background-color: #c5c5c5;
+  border-radius: 10px;
+}
+
+/*table 超出滚动*/
+.ant-table-content{
+  overflow: auto;
+}
+
+
+/****** 截图hack css *********************************/
+.ant-menu,
+.ant-table,
+.ant-form,
+.ant-form-item,
+.ant-form label,
+.ant-input,
+.ant-tabs-nav-container,
+.ant-descriptions-item-label,
+.ant-descriptions-item-content,
+.ant-checkbox-wrapper,
+.ant-menu-vertical .ant-menu-item,
+.ant-modal-body,
+.ant-btn,
+.ant-btn-sm,
+.ant-input-affix-wrapper,
+.ant-select,
+.ant-modal-confirm-body .ant-modal-confirm-content,
+.ant-empty,
+.ant-pagination,
+.ant-radio-wrapper,
+.ant-timeline,
+.ant-steps-item-title,
+.ant-tooltip {
+  font-size: $font-14;
+}
+.ant-btn {
+  height: $font-32;
+  padding: 0 $font-16;
+}
+.ant-input,
+.ant-select-selection--single {
+  height: $font-32 !important;
+}
+
+.ant-modal-title,
+.ant-modal-confirm-body .ant-modal-confirm-title {
+  font-size: $font-16;
+}
+.ant-tag {
+  font-size: $font-12;
+  line-height: $font-20;
+}
+.primary-icon {
+  width: $font-64;
+  height: $font-64;
+}
+.ant-select-selection__rendered {
+  line-height: $font-30;
+}
+.ant-select-selection__placeholder {
+  height: $font-16;
+  line-height: $font-12;
+}
+.ant-collapse{
+  font-size:22.4px;
+}
+.ant-select-dropdown-menu-item{
+  font-size:22.4px;
+  height:48px;
+  line-height:48px;
+}
+.layout-header {
+  height: 96px !important;
+  line-height: 96px !important;
+}
+.layout-content {
+  margin-top: 96px !important;
+}
+.action-modify{
+  .ant-timeline{
+    margin-left: 210px;
+    .ant-timeline-item-content{
+      font-size: $font-14;
+      .left-tip{
+        left:-230px !important;
+      }
+      .timeline-node{
+        .new-add{
+          height: 411px;
+        }
+        .node {
+            width: 365px;
+            .ant-tag {
+              height: 36px !important;
+            }
+
+            .bottom {
+              height: 100px;
+            }
+        }
+       
+      }
+    }
+  }
+}
+.network{
+  .ant-descriptions-item-label{
+    width: 150px !important;
+    }
+  }
+.filter-action{
+  .ant-radio-inner{
+    top:-4px;
+  }
+}
+.ant-row-flex div.h50{
+  height:50px;
+}
